@@ -8,9 +8,22 @@ namespace SnakeTheGame
         static void Main(string[] args)
         {
             //0 = Snake bewegt sich automatisch, 1 = klassisches Snake
-            int programToUse = 0;
+            int programToUse = 1;
 
-            if (programToUse == 0)
+            Console.WriteLine("Choose : press 1 for classic snake game, press 2 for a snake that moves by itself.");
+            ConsoleKey key = Console.ReadKey().Key;
+            if (key == ConsoleKey.D1)
+            {
+                Console.Clear();
+                programToUse = 1;
+            }
+            if (key == ConsoleKey.D2)
+            {
+                Console.Clear();
+                programToUse = 2;
+            }
+
+            if (programToUse == 2)
             {
                 Model model = new Model();
                 AutomovePresenter presenter = new AutomovePresenter();
